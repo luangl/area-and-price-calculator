@@ -14,6 +14,10 @@ footer {
   background-color: #304a6e;
 }
 
+footer h3{
+  margin-top: 20px;
+}
+
 .rodape {
   height: 20px;
 }

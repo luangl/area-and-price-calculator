@@ -16,12 +16,29 @@ function Home() {
     const handleOnClickTrapesio = () => navigate('/trapesio');
     const handleOnClickTriangulo = () => navigate('/triangulo');
 
+    const smoothScroll = (target) => {
+      const element = document.querySelector(target);
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth"
+      });
+    }
+
+    document.querySelectorAll('.scroll-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        smoothScroll(target);
+      });
+    });
+
   return (
     <div className='bodyt'>
-      <header id='headerhome'><h1 id='title' className='title'>C.A.P.F-(Calculadora de Área e Preço por Figura)</h1>
+      <header id='headerhome'><h1 id='title' className='title'>C.A.P.F</h1>
+      <h1 className='title'>Calculadora de Área e Preço por Figura</h1>
       <div className='refs'>
-      <a className='refscolor' href='#'><h1>SELECIONE A FIGURA</h1></a>
-      <a className='refscolor' href='#avalie'><h1>AVALIE NOSSO SERVIÇO</h1></a>
+      <a className='refscolor scroll-link' href='#title'><h1 className='refstext'>SELECIONE A FIGURA</h1></a>
+      <a className='refscolor scroll-link' href='#avalie'><h1 className='refstext'>AVALIE NOSSO SERVIÇO</h1></a>
       </div>
       </header>
       <h2 id='figuras' className='texto'> SELECIONE A FIGURA GEOMÉTRICA </h2>

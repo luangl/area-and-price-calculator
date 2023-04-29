@@ -38,7 +38,8 @@ function Circulo() {
       <div>
         <header>
           <div className='cabecalho'>
-            <h1 className='title'>C.A.P.F-(Calculadora de Área e Preço por Figura.)</h1>
+            <h1 className='title'>C.A.P.F</h1>
+            <h1 className='title'>Calculadora de Área e Preço por Figura</h1>
             <div className='botao'>
         <button className='btn-back' onClick={handleOnClickVolta}>
           {'ESCOLHER OUTRA FIGURA'}
@@ -53,15 +54,12 @@ function Circulo() {
           </div>
           <div>
             <div className='inputField'>
-                <h3>Raio:
+                <h3>Raio em metros:</h3>
                 <input type="text" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
-                m
-                </h3>
             </div>
             <div className='inputField'>
-                <h3>Acréscimo de percentual de Área:
-                <input type="text" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
-                %</h3>
+                <h3>Acréscimo de percentual de Área:</h3>
+                <input type="text" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea"/>
             </div>
             <div className='inputField'>
               <div className='areaa'>

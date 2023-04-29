@@ -1,4 +1,5 @@
 header{
+    padding-top: 10px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -62,7 +63,10 @@ header{
   }
   
   .title {
-    height: 50px; /* altura fixa para o título */
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .description {
@@ -94,4 +98,49 @@ header{
     margin-bottom: 50px;
   }
   
-  
+  @media screen and (max-width: 600px) {
+    /* aqui você pode definir as regras de estilo para dispositivos com largura máxima de 600px, como celulares */
+    
+    .container-home,
+    .container-second-row {
+    display: block;
+    margin-bottom: 20px;
+    }
+    
+    .card {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    }
+    
+    .texto {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    }
+    
+    .image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    }
+    
+    .refstext {
+      font-size: 14px;
+    }
+
+    .title {
+      word-wrap: break-word;
+      font-size: 21px;
+    }
+
+    a {
+      padding-top: 0px;
+    }
+
+    .title,
+    .description {
+    height: auto;
+    }
+    }
