@@ -35,58 +35,67 @@ function Circulo() {
 
 
     return (
-      <div>
+      <><div>
         <header>
           <div className='cabecalho'>
             <h1 className='title'>C.A.P.F</h1>
             <h1 className='title'>Calculadora de Área e Preço por Figura</h1>
             <div className='botao'>
-        <button className='btn-back' onClick={handleOnClickVolta}>
-          {'ESCOLHER OUTRA FIGURA'}
-        </button>
-        </div>
+              <button className='btn-back' onClick={handleOnClickVolta}>
+                {'ESCOLHER OUTRA FIGURA'}
+              </button>
+            </div>
           </div>
         </header>
         <div className='container'>
           <div className='circulo'>
             <h2>Circulo</h2>
-          <img src={circulo} alt="error1" title="Circulo" className= "Circulo" />
+            <img src={circulo} alt="error1" title="Circulo" className="Circulo" />
           </div>
           <div>
             <div className='inputField'>
-                <h3>Raio em metros:</h3>
-                <input type="text" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
+              <h3>Raio em metros:</h3>
+              <input type="text" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
             </div>
             <div className='inputField'>
-                <h3>Acréscimo de percentual de Área:</h3>
-                <input type="text" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea"/>
+              <h3>Acréscimo de percentual de Área:</h3>
+              <input type="text" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
             </div>
             <div className='inputField'>
               <div className='areaa'>
                 <h3>Área: {calcArea}m²
-                
+
                 </h3>
-                </div>
+              </div>
             </div>
             <div className='inputField'>
-                <h3>
+              <h3>
                 Quantidade:
-                </h3>
-                <input type="text" value={valor} onChange={e => setValor(e.target.value)} name="altura" />
+              </h3>
+              <input type="text" value={valor} onChange={e => setValor(e.target.value)} name="altura" />
             </div>
             <div className='inputField'>
               <h3>
                 Valor: R$ {calcPreco}
-                </h3>
+              </h3>
             </div>
             <div className='inputField'>
               <h3>
                 Latas de tinta necessárias: {calcLatas}
-                </h3>
+              </h3>
             </div>
           </div>
         </div>
-      </div>
+      </div><footer id='avalie'>
+          <div>
+            <a href='https://forms.gle/CJqewkoxvPUsE96h7'>
+              <h3>AVALIE NOSSO SERVIÇO!</h3>
+            </a>
+            <div className='rodape'>
+
+            </div>
+          </div>
+        </footer></>
     );
   }
   

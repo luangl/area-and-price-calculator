@@ -1,77 +1,133 @@
-import quadrado  from '../../assets/imagens/Quadrado-Formas-PNG.png'
-import retangulo  from '../../assets/imagens/retangulo.png'
-import circulo  from '../../assets/imagens/icone-cercle-noir.png'
-import trapesio  from '../../assets/imagens/trapesio.png'
-import triangulo  from '../../assets/imagens/triangulo-equilatero-8.png'
-import {useNavigate} from 'react-router-dom';
+import quadrado from '../../assets/imagens/Quadrado-Formas-PNG.png';
+import retangulo from '../../assets/imagens/retangulo.png';
+import circulo from '../../assets/imagens/icone-cercle-noir.png';
+import trapesio from '../../assets/imagens/trapesio.png';
+import triangulo from '../../assets/imagens/triangulo-equilatero-8.png';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../home/index.css';
 
 function Home() {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
-    const navigate = useNavigate();
+  const handleOnClickQuadrado = () => navigate('/quadrado');
+  const handleOnClickRetangulo = () => navigate('/retangulo');
+  const handleOnClickCirculo = () => navigate('/circulo');
+  const handleOnClickTrapesio = () => navigate('/trapesio');
+  const handleOnClickTriangulo = () => navigate('/triangulo');
 
-    const handleOnClickQuadrado = () => navigate('/quadrado');
-    const handleOnClickRetangulo = () => navigate('/retangulo');
-    const handleOnClickCirculo = () => navigate('/circulo');
-    const handleOnClickTrapesio = () => navigate('/trapesio');
-    const handleOnClickTriangulo = () => navigate('/triangulo');
-
-    const smoothScroll = (target) => {
-      const element = document.querySelector(target);
-      window.scrollTo({
-        top: element.offsetTop,
-        behavior: "smooth"
-      });
-    }
-
-    document.querySelectorAll('.scroll-link').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = this.getAttribute('href');
-        smoothScroll(target);
-      });
+  const smoothScroll = (target) => {
+    const element = document.querySelector(target);
+    window.scrollTo({
+      top: element.offsetTop,
+      behavior: 'smooth',
     });
+  };
+
+  document.querySelectorAll('.scroll-link').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = this.getAttribute('href');
+      smoothScroll(target);
+    });
+  });
+
+  const handleFilterChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const cards = [
+    {
+      id: 1,
+      title: 'Quadrado',
+      image: quadrado,
+      onClick: handleOnClickQuadrado,
+    },
+    {
+      id: 2,
+      title: 'Retângulo',
+      image: retangulo,
+      onClick: handleOnClickRetangulo,
+    },
+    {
+      id: 3,
+      title: 'Círculo',
+      image: circulo,
+      onClick: handleOnClickCirculo,
+    },
+    {
+      id: 4,
+      title: 'Trapézio',
+      image: trapesio,
+      onClick: handleOnClickTrapesio,
+    },
+    {
+      id: 5,
+      title: 'Triângulo',
+      image: triangulo,
+      onClick: handleOnClickTriangulo,
+    },
+    {
+      id: 5,
+      title: 'Triângulo',
+      image: triangulo,
+      onClick: handleOnClickTriangulo,
+    },
+  ];
+
+  const filteredCards = cards.filter((card) =>
+    card.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className='bodyt'>
-      <header id='headerhome'><h1 id='title' className='title'>C.A.P.F</h1>
-      <h1 className='title'>Calculadora de Área e Preço por Figura</h1>
-      <div className='refs'>
-      <a className='refscolor scroll-link' href='#title'><h1 className='refstext'>SELECIONE A FIGURA</h1></a>
-      <a className='refscolor scroll-link' href='#avalie'><h1 className='refstext'>AVALIE NOSSO SERVIÇO</h1></a>
-      </div>
+    <><div className="bodyt">
+      <header id="headerhome">
+        <h1 id="title" className="title">
+          C.A.P.F
+        </h1>
+        <h1 className="title">
+          Calculadora de Área e Preço por Figura
+        </h1>
+        <div className="refs">
+          <a className="refscolor scroll-link" href="#title">
+            <h1 className="refstext">SELECIONE A FIGURA</h1>
+          </a>
+          <a className="refscolor scroll-link" href="#avalie">
+            <h1 className="refstext">AVALIE NOSSO SERVIÇO</h1>
+          </a>
+        </div>
       </header>
-      <h2 id='figuras' className='texto'> SELECIONE A FIGURA GEOMÉTRICA </h2>
+      <h2 id="figuras" className="texto">
+        CLIQUE NA FIGURA GEOMÉTRICA DESEJADA
+      </h2>
+      <div className="container-input">
+        <input
+          type="text"
+          placeholder="Buscar Figura"
+          value={searchTerm}
+          onChange={handleFilterChange} />
+      </div>
       <div className="container-home">
-  <div className="card" onClick={handleOnClickQuadrado}>
-    <img src={quadrado} alt="Quadrado" className="image" />
-    <h2>Quadrado</h2>
-    <p>Figura geométrica com quatro lados iguais e quatro ângulos retos.</p>
-  </div>
-  <div className="card" id="ret" onClick={handleOnClickRetangulo}>
-    <img src={retangulo} alt="Retângulo" className="image" />
-    <h2>Retângulo</h2>
-    <p>Figura geométrica com quatro lados e quatro ângulos retos. Os lados opostos são congruentes.</p>
-  </div>
-  <div className="card" onClick={handleOnClickCirculo}>
-    <img src={circulo} alt="Círculo" className="image" />
-    <h2>Círculo</h2>
-    <p>Figura geométrica definida como o conjunto de pontos em um plano que estão a uma mesma distância de um ponto fixo.</p>
-  </div>
-  </div>
-  <div className="container-second-row">
-  <div className="card" onClick={handleOnClickTrapesio}>
-    <img src={trapesio} alt="Trapézio" className="image" />
-    <h2>Trapézio</h2>
-    <p>Figura geométrica plana com quatro lados e dois lados paralelos.</p>
-  </div>
-  <div className="card" onClick={handleOnClickTriangulo}>
-    <img src={triangulo} alt="Triângulo" className="image" />
-    <h2>Triângulo</h2>
-    <p>Figura geométrica plana com três lados e três ângulos internos.</p>
-  </div>
-  </div>
-</div>
+        {filteredCards.map((card) => (
+          <div className="card" key={card.id} onClick={card.onClick}>
+            <img src={card.image} alt={card.title} className="image" />
+            <h2>{card.title}</h2>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div className='separar'></div>
+    <footer id='avalie'>
+        <div>
+          <a href='https://forms.gle/CJqewkoxvPUsE96h7'> 
+          <h3>AVALIE NOSSO SERVIÇO!</h3>
+          </a>
+          <div className='rodape'>
+            
+            </div>
+        </div>
+      </footer></>
   );
 }
 

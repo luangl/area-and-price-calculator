@@ -11,8 +11,7 @@ import Circulo from './pages/circulo';
 
 function App() {
   return (
-    <div>
-    <><BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/quadrado" element={<QuadradoCard />} />
@@ -22,17 +21,6 @@ function App() {
         <Route path="/circulo" element={<CirculoCard />} />
       </Routes>
     </BrowserRouter>
-    <footer id='avalie'>
-        <div>
-          <a href='https://forms.gle/CJqewkoxvPUsE96h7'> 
-          <h3>AVALIE NOSSO SERVIÇO!</h3>
-          </a>
-          <div className='rodape'>
-            
-            </div>
-        </div>
-      </footer></>
-      </div>
   );
 }
 

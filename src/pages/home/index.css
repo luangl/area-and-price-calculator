@@ -6,6 +6,31 @@ header{
     z-index: 99;
 }
 
+footer {
+  position: sticky;
+  margin-top: 20px;
+  background-color: #304a6e;
+}
+
+.separar {
+  height: 240px;
+}
+
+footer h3{
+  margin-top: 20px;
+}
+
+.rodape {
+  margin-top: 20px;
+  height: 30px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -13,10 +38,8 @@ header{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 450px;
+    max-width: 500px;
     background-color: #c6f6de;
   }
 
@@ -25,6 +48,7 @@ header{
     align-items: center;
     justify-content: space-around;
     font-size: 10px;
+    margin-top: -30px;
 }
 
 .refscolor {
@@ -39,7 +63,7 @@ header{
     margin-top: 50px;
     margin-bottom: 30px;
     display: flex;
-    font-size: 25px;
+    font-size: 33px;
     justify-content: center;
     margin-left: auto;
     padding-top: -100px;
@@ -56,7 +80,12 @@ header{
   }
   
   .image {
-    margin-left: 70px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    margin-left: auto;
     width: 150px;
     height: auto;
     margin-bottom: 10px;
@@ -69,6 +98,16 @@ header{
     justify-content: center;
   }
   
+  .container-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .description {
     height: 80px; /* altura fixa para a descrição */
   }
@@ -78,6 +117,12 @@ header{
     gap: 100px;
     justify-content: center;
     margin-bottom: 50px;
+  }
+
+  .container-home img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .card:nth-child(1),
@@ -93,10 +138,12 @@ header{
   
   .container-second-row {
     display: grid;
-    gap: 100px;
+    gap: 200px;
     justify-content: center;
     margin-bottom: 50px;
   }
+  
+
   
   @media screen and (max-width: 600px) {
     /* aqui você pode definir as regras de estilo para dispositivos com largura máxima de 600px, como celulares */
@@ -106,18 +153,45 @@ header{
     display: block;
     margin-bottom: 20px;
     }
-    
+  
+    .container-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      height: 40px;
+      width: 50%;
+    }
+
+    .container-input input {
+      height: 20px;
+      width: 150px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+
+    .refs {
+      margin-top: 10px;
+    }
+
     .card {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     }
+
+    .separar {
+      height: 100px;
+    }
     
     .texto {
     margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 22px;
+    font-size: 19px;
     }
     
     .image {
