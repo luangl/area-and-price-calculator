@@ -38,7 +38,7 @@ h2 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
-    width: 450px;
+    width: 400px;
     max-width: 500px;
     background-color: #c6f6de;
   }
@@ -118,6 +118,43 @@ h2 {
     justify-content: center;
     margin-bottom: 50px;
   }
+
+  .search {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #304a6e;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  }
+  .search :is(input, button) {
+    color: inherit;
+    border: none;
+    background: transparent;
+    outline: transparent;
+  }
+  .search__input {
+    width: 0px;
+    margin-right: -5px;
+    transition: width .5s;
+  }
+
+  .search__btn {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  .search:focus-within input {
+    width: 300px;
+  }
+::placeholder {
+  color: inherit;
+}
+
+
 
   .container-home img{
     display: flex;
@@ -217,4 +254,5 @@ h2 {
     .description {
     height: auto;
     }
+
     }
