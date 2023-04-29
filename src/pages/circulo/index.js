@@ -19,16 +19,22 @@ function Circulo() {
     const valorPercentual = addOnArea ? (resTemp * addOnArea) / 100 : 0;
     const resTotal = addOnArea ? resTemp + valorPercentual : 0;
     setResultado(addOnArea ? resTotal : resTemp);
-    return addOnArea ? resTotal : resTemp;
+    return (addOnArea ? resTotal : resTemp).toFixed(2);
   }, [raio, addOnArea]);
   
   const calcPreco = useMemo(() => {
-      return resultado * valor;
+      return (resultado * valor).toFixed(2);
   }, [valor, resultado]);
 
   const calcLatas = useMemo(() => {
     const COBERTURA_POR_LATA = 10; // Área em m² coberta por uma lata de tinta
-    const qtdLatas = Math.ceil(calcArea / COBERTURA_POR_LATA * valor); // Arredonda para cima a quantidade de latas necessárias
+    const qtdLatas = Math.ceil(calcArea / COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
+    return qtdLatas;
+  }, [calcArea, valor]);
+
+  const calcTijolos = useMemo(() => {
+    const COBERTURA_POR_LATA = 5; // Área em m² coberta por uma lata de tinta
+    const qtdLatas = Math.ceil(calcArea / COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
     return qtdLatas;
   }, [calcArea, valor]);
   
@@ -64,7 +70,6 @@ function Circulo() {
             <div className='inputField'>
               <div className='areaa'>
                 <h3>Área: {calcArea}m²
-
                 </h3>
               </div>
             </div>
@@ -84,6 +89,11 @@ function Circulo() {
                 Latas de tinta necessárias: {calcLatas}
               </h3>
             </div>
+            <div className='inputField'>
+              <h3>
+                m² de Tijolos necessários: {calcTijolos}
+              </h3>
+            </div>
           </div>
         </div>
       </div><footer id='avalie'>
@@ -92,7 +102,6 @@ function Circulo() {
               <h3>AVALIE NOSSO SERVIÇO!</h3>
             </a>
             <div className='rodape'>
-
             </div>
           </div>
         </footer></>
