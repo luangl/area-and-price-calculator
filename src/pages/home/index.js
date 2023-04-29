@@ -6,7 +6,6 @@ import triangulo from '../../assets/imagens/triangulo-equilatero-8.png';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../home/index.css';
-import searchicon from '../../assets/imagens/searchicon.png'
 
 function Home() {
   const navigate = useNavigate();
@@ -84,7 +83,7 @@ function Home() {
   return (
     <><div className="bodyt">
       <header id="headerhome">
-        <h1 id="title" className="title">
+        <h1 id="title" className="titlecapf">
           C.A.P.F
         </h1>
         <h1 className="title">
