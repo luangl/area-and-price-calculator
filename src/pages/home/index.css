@@ -191,7 +191,7 @@ h2 {
   
 
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1100px) {
     /* aqui você pode definir as regras de estilo para dispositivos com largura máxima de 600px, como celulares */
     
     .container-home,
