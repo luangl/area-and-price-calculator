@@ -6,6 +6,20 @@ body {
     color: #fff;
 }
 
+#select-calculo {
+    background-color: #c6f6de;
+    border-radius: 4px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputcirculo {
+    display: flex;
+}
+
+
 .title{
     color: #fff;
 }
@@ -149,4 +163,18 @@ input {
         font-weight: bold;
     }
 
+    .containerinput {
+        display: flex;
+        justify-content: center;
+      }
+    
+    .inputcirculotexto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .inputField h3 {
+        display: block;
+    }
 }

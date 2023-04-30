@@ -10,6 +10,9 @@ function Circulo() {
   const [valor, setValor] = useState('');
   const [addOnArea, setAddOnArea] = useState('');
   const [resultado, setResultado] = useState('');
+  const [tipoCalculo, setTipoCalculo] = useState('latas');
+  const [calcTotalTijolos, setCalcTotalTijolos] = useState('0');
+  const [calcTotalLatas, setCalcTotalLatas] = useState('0');
 
   const handleOnClickVolta = () => navigate('/');
 
@@ -23,8 +26,8 @@ function Circulo() {
   }, [raio, addOnArea]);
   
   const calcPreco = useMemo(() => {
-      return (resultado * valor).toFixed(2);
-  }, [valor, resultado]);
+      return (resultado * valor);
+  }, [valor, resultado]).toFixed(2);
 
   const calcLatas = useMemo(() => {
     const COBERTURA_POR_LATA = 10; // Área em m² coberta por uma lata de tinta
@@ -33,12 +36,39 @@ function Circulo() {
   }, [calcArea, valor]);
 
   const calcTijolos = useMemo(() => {
-    const COBERTURA_POR_LATA = 5; // Área em m² coberta por uma lata de tinta
-    const qtdLatas = Math.ceil(calcArea / COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
+    const COBERTURA_POR_LATA = 23; // Área em m² coberta por uma lata de tinta
+    const qtdLatas = Math.ceil(calcArea * COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
     return qtdLatas;
   }, [calcArea, valor]);
   
 
+    const PRECO_LATA_TINTA = 100; // Preço unitário de uma lata de tinta de 20L
+
+    const PRECO_TIJOLO = 0.3; // Preço unitário de um tijolo
+
+    function handleSelectChange(event) {
+      setTipoCalculo(event.target.value);
+      if (event.target.value === 'latas') {
+        const qtdLatas = calcLatas / 10; // Cada lata tem 10L
+        const total = (qtdLatas * PRECO_LATA_TINTA) + parseFloat(calcPreco);
+        setCalcTotalLatas(total.toFixed(2));
+      } else if (event.target.value === 'tijolos') {
+        const total = (calcTijolos * PRECO_TIJOLO) + parseFloat(calcPreco);
+        setCalcTotalTijolos(total.toFixed(2));
+      }
+    }
+    const totalValue = useMemo(() => {
+      if (tipoCalculo === 'latas') {
+        const qtdLatas = calcLatas / 10; // Cada lata tem 10L
+        const total = (qtdLatas * PRECO_LATA_TINTA) + parseFloat(calcPreco);
+        return total.toFixed(2);
+      } else if (tipoCalculo === 'tijolos') {
+        const total = (calcTijolos * PRECO_TIJOLO) + parseFloat(calcPreco);
+        return total.toFixed(2);
+      }
+    }, [tipoCalculo, calcLatas, calcTijolos, calcPreco]);
+
+    
 
     return (
       <><div>
@@ -61,11 +91,11 @@ function Circulo() {
           <div>
             <div className='inputField'>
               <h3>Raio em metros:</h3>
-              <input type="text" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
+              <input type="number" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
             </div>
             <div className='inputField'>
               <h3>Acréscimo de percentual de Área:</h3>
-              <input type="text" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
+              <input type="number" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
             </div>
             <div className='inputField'>
               <div className='areaa'>
@@ -84,16 +114,30 @@ function Circulo() {
                 Valor: R$ {calcPreco}
               </h3>
             </div>
-            <div className='inputField'>
-              <h3>
-                Latas de tinta necessárias: {calcLatas}
-              </h3>
-            </div>
-            <div className='inputField'>
-              <h3>
-                m² de Tijolos necessários: {calcTijolos}
-              </h3>
-            </div>
+              <div>
+              <div className='containerinput'>
+      <div className='inputField'>
+        <h3 className='inputcirculo'>
+          <label className='inputcirculotexto' htmlFor="select-calculo">Calcular em:</label>
+          <select id="select-calculo" onChange={handleSelectChange}>
+            <option value="latas">Latas de tinta de 20Litros</option>
+            <option value="tijolos">Tijolos</option>
+          </select>
+        </h3>
+        <h3>
+          {tipoCalculo === 'latas' ?
+            `${calcLatas} Lata de tinta de 1L` :
+            `${calcTijolos} unidades`
+          }
+        </h3>
+      </div>
+      </div>
+      <div className='inputField'>
+        <h3>
+          Valor Total: R$ {totalValue}
+        </h3>
+      </div>
+    </div>
           </div>
         </div>
       </div><footer id='avalie'>
