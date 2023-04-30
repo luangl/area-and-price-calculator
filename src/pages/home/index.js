@@ -1,8 +1,10 @@
 import quadrado from '../../assets/imagens/Quadrado-Formas-PNG.png';
 import retangulo from '../../assets/imagens/retangulo.png';
 import circulo from '../../assets/imagens/icone-cercle-noir.png';
-import trapesio from '../../assets/imagens/trapesio.png';
+import trapezio from '../../assets/imagens/trapesio.png';
 import triangulo from '../../assets/imagens/triangulo-equilatero-8.png';
+import paralelogramo from '../../assets/imagens/paralelogramo.png';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../home/index.css';
@@ -14,8 +16,9 @@ function Home() {
   const handleOnClickQuadrado = () => navigate('/quadrado');
   const handleOnClickRetangulo = () => navigate('/retangulo');
   const handleOnClickCirculo = () => navigate('/circulo');
-  const handleOnClickTrapesio = () => navigate('/trapesio');
+  const handleOnClickTrapezio = () => navigate('/trapesio');
   const handleOnClickTriangulo = () => navigate('/triangulo');
+  const handleOnClickParalelogramo = () => navigate('/paralelogramo');
 
   const smoothScroll = (target) => {
     const element = document.querySelector(target);
@@ -59,8 +62,8 @@ function Home() {
     {
       id: 4,
       title: 'Trapézio',
-      image: trapesio,
-      onClick: handleOnClickTrapesio,
+      image: trapezio,
+      onClick: handleOnClickTrapezio,
     },
     {
       id: 5,
@@ -70,9 +73,9 @@ function Home() {
     },
     {
       id: 6,
-      title: 'Triângulo',
-      image: triangulo,
-      onClick: handleOnClickTriangulo,
+      title: 'Paralelogramo',
+      image: paralelogramo,
+      onClick: handleOnClickParalelogramo,
     },
   ];
 

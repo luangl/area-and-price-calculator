@@ -68,7 +68,10 @@ function Circulo() {
       }
     }, [tipoCalculo, calcLatas, calcTijolos, calcPreco]);
 
-    
+    const options = [
+      { value: 'latas', label: 'Latas de Tinta' },
+      { value: 'tijolos', label: 'Tijolos' }
+    ];
 
     return (
       <><div>
@@ -137,6 +140,7 @@ function Circulo() {
           Valor Total: R$ {totalValue}
         </h3>
       </div>
+      
     </div>
           </div>
         </div>

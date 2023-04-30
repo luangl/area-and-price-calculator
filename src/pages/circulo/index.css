@@ -166,7 +166,10 @@ input {
     .containerinput {
         display: flex;
         justify-content: center;
+        width: 100%;
+        margin-left: 5px;
       }
+
     
     .inputcirculotexto {
         display: flex;
