@@ -263,6 +263,15 @@ h2 {
       padding-bottom: 10px;
     }
   
+    .bodyt{
+      background-color: #b3dfec;
+      margin-top: 160px;
+  }
+
+  .separar {
+    height: 100px;
+  }
+
     .container-input {
       display: flex;
       align-items: center;
@@ -272,6 +281,38 @@ h2 {
       margin-bottom: 30px;
       height: 40px;
       width: 50%;
+    }
+
+    .refstext {
+      text-align: center;
+    }
+
+    .faq__panel {
+      margin-top: 20px;
+      padding: 7px 21px;
+      margin-bottom: 35px;
+      border: 1px solid #777e91;
+      border-radius: 8px;
+      width: 350px;
+    }
+    .faq__label {
+      padding-block: 7px;
+      color: #304a6e;
+      cursor: pointer;
+      font-size: 25px;
+      font-weight: bold;
+      width: 400px;
+    }
+    .faq__label:hover {
+      color: #3b71fe;
+      width: 350px;
+    }
+    .faq__panel-answer {
+      color: #304a6e;
+      padding-top: 5px;
+      padding-bottom: 7px;
+      font-size: 20px;
+      width: 350px;
     }
 
     .container-input input {
@@ -296,10 +337,6 @@ h2 {
     margin-right: auto;
     margin-bottom: 20px;
     }
-
-    .separar {
-      height: 100px;
-    }
     
     .container-input {
       display: flex;
@@ -311,9 +348,18 @@ width: 20%;
     .texto {
     margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: clamp(30px, 1vw, 40px);
+    text-align: center;
     }
     
+    .faq__header_se {
+      background-color: #c6f6de;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
     .image {
     margin-left: auto;
     margin-right: auto;
