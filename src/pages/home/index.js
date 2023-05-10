@@ -40,6 +40,18 @@ function Home() {
     setSearchTerm(event.target.value);
   };
 
+  const panels = document.querySelectorAll('.faq__panel')
+			const panelLabels = document.querySelectorAll('.faq__label')
+			panels.forEach((panel, index) => {
+				let isExpanded = panel.getAttribute('aria-expanded') === 'true'
+
+				panelLabels[index].addEventListener('click', () => {
+					console.log('clicked')
+					isExpanded = !isExpanded
+					panel.setAttribute('aria-expanded', isExpanded)
+				})
+			})
+
   const cards = [
     {
       id: 1,
@@ -96,14 +108,19 @@ function Home() {
           <a className="refscolor scroll-link" href="#title">
             <h1 className="refstext">SELECIONE A FIGURA</h1>
           </a>
+          <a className="refscolor scroll-link" href="#faq">
+            <h1 className="refstext">PERGUNTAS FREQUENTES</h1>
+          </a>
           <a className="refscolor scroll-link" href="#avalie">
             <h1 className="refstext">AVALIE NOSSO SERVIÇO</h1>
           </a>
         </div>
       </header>
+      <div class="faq__header_se">
       <h2 id="figuras" className="texto">
         CLIQUE NA FIGURA GEOMÉTRICA DESEJADA
       </h2>
+      </div>
       <div className="container-input">
         <form class='search'>
         <button class='search__btn'>
@@ -126,7 +143,62 @@ function Home() {
         ))}
       </div>
     </div>
-    <div className='separar'></div>
+    <div class="separar" id="faq"></div>
+    <section class="faq container" aria-label="Frequently Asked Questions">
+    <div class="faq__header">
+				<h2 class="faq__header-title">PERGUNTAS FREQUENTES</h2>
+			</div>
+			<div class="faq__body">
+				<details aria-expanded="true" class="faq__panel" open>
+					<summary class="faq__label">Pergunta</summary>
+					<div class="faq__panel-body">
+						<p class="faq__panel-answer">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
+							animi dolorum provident id aspernatur, nisi consequuntur iusto!
+							Neque perferendis eaque corrupti alias.
+						</p>
+					</div>
+				</details>
+				<details aria-expanded="false" class="faq__panel">
+					<summary class="faq__label">
+						Pergunta
+					</summary>
+					<div class="faq__panel-body">
+						<p class="faq__panel-answer">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
+							animi dolorum provident id aspernatur, nisi consequuntur iusto!
+							Neque perferendis eaque corrupti alias.
+						</p>
+					</div>
+				</details>
+				<details aria-expanded="false" class="faq__panel">
+					<summary class="faq__label">
+						Pergunta
+					</summary>
+					<div class="faq__panel-body">
+						<p class="faq__panel-answer">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
+							animi dolorum provident id aspernatur, nisi consequuntur iusto!
+							Neque perferendis eaque corrupti alias.
+						</p>
+					</div>
+				</details>
+				<details aria-expanded="false" class="faq__panel">
+					<summary class="faq__label">Pergunta</summary>
+					<div class="faq__panel-body">
+						<p class="faq__panel-answer">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
+							animi dolorum provident id aspernatur, nisi consequuntur iusto!
+							Neque perferendis eaque corrupti alias.
+						</p>
+					</div>
+				</details>
+			</div>
+		</section>
     <footer id='avalie'>
         <div>
           <a href='https://forms.gle/CJqewkoxvPUsE96h7'> 

@@ -1,9 +1,9 @@
 header{
     padding-top: 5px;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
-    z-index: 99;
+    z-index: 1;
 }
 
 footer {
@@ -13,7 +13,7 @@ footer {
 }
 
 .separar {
-  height: 240px;
+  height: 155px;
 }
 
 footer h3{
@@ -39,7 +39,7 @@ h2 {
     transition: all 0.3s ease;
     cursor: pointer;
     background-color: #c6f6de;
-    width: 400px;
+    width: 350px;
   }
 
 .refs {
@@ -56,6 +56,7 @@ h2 {
 
 .bodyt{
     background-color: #b3dfec;
+    margin-top: 220px;
 }
 
 .texto{
@@ -65,7 +66,8 @@ h2 {
     font-size: 33px;
     justify-content: center;
     margin-left: auto;
-    padding-top: -100px;
+    padding-top: -102px;
+    color: #304a6e;
 }
 
 #ret img{
@@ -100,7 +102,7 @@ h2 {
 
   .title {
     padding-top: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,7 +127,7 @@ h2 {
     display: grid;
     gap: 100px;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .search {
@@ -187,6 +189,61 @@ h2 {
     gap: 200px;
     justify-content: center;
     margin-bottom: 50px;
+  }
+
+  .container {
+    margin-inline: auto;
+    margin-bottom: 150px;
+  }
+
+  .faq__header_se {
+    background-color: #c6f6de;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .faq__header {
+    background-color: #c6f6de;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .faq__header-title {
+    font-size: clamp(26px, 5vw, 40px);
+    color: #304a6e;
+    margin-bottom: 30px;
+    background-color: #c6f6de;
+    
+  }
+  .faq__panel {
+    margin-top: 20px;
+    padding: 7px 21px;
+    margin-bottom: 35px;
+    border: 1px solid #777e91;
+    border-radius: 8px;
+  }
+  .faq__label {
+    width: 1000px;
+    padding-block: 7px;
+    color: #304a6e;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .faq__label:hover {
+    color: #3b71fe;
+  }
+  .faq__panel-answer {
+    color: #304a6e;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    width: 1000px;
+    font-size: 20px;
   }
   
 

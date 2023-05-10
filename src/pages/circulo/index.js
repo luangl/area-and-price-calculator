@@ -75,7 +75,7 @@ function Circulo() {
 
     return (
       <><div>
-        <header>
+        <header className='cabecalhoheader'>
           <div className='cabecalho'>
             <h1 className='titlecapf'>C.A.P.F</h1>
             <h1 className='title'>Calculadora de Área e Preço por Figura</h1>
@@ -129,7 +129,7 @@ function Circulo() {
         </h3>
         <h3>
           {tipoCalculo === 'latas' ?
-            `${calcLatas} Lata de tinta de 1L` :
+            `${calcLatas} Latas de tinta de 1L` :
             `${calcTijolos} unidades`
           }
         </h3>
