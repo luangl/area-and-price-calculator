@@ -68,6 +68,7 @@ h2 {
     margin-left: auto;
     padding-top: -102px;
     color: #304a6e;
+    font-size: clamp(26px, 5vw, 40px);
 }
 
 #ret img{
