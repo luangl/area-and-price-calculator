@@ -27,9 +27,9 @@ function App() {
 // Componentes de Card para cada página
 function QuadradoCard() {
   return (
-    <div className="container">
-      <div class="item"><Quadrado /></div>
-    </div>
+      <div className='item'>
+        <Quadrado />
+      </div>
   );
 }
 
