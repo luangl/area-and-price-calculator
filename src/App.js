@@ -8,6 +8,7 @@ import Triangulo from './pages/triangulo';
 import Retangulo from './pages/retangulo';
 import Trapesio from './pages/trapesio';
 import Circulo from './pages/circulo';
+import Paralelogramo from './pages/paralelogramo';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/retangulo" element={<RetanguloCard />} />
         <Route path="/trapesio" element={<TrapesioCard />} />
         <Route path="/circulo" element={<CirculoCard />} />
+        <Route path="/paralelogramo" element={<ParalelogramoCard />} />
       </Routes>
     </BrowserRouter>
   );
@@ -61,6 +63,14 @@ function CirculoCard() {
   return (
     <div className="item">
       <Circulo />
+    </div>
+  );
+}
+
+function ParalelogramoCard() {
+  return (
+    <div className="item">
+      <Paralelogramo />
     </div>
   );
 }

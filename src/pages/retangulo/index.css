@@ -1,0 +1,195 @@
+body {
+    background-color: #b3dfec;
+}
+
+.titlecapf {
+    color: #fff;
+}
+
+#select-calculo {
+    background-color: #c6f6de;
+    border-radius: 4px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 0px;
+}
+
+.inputcirculo {
+    display: flex;
+}
+
+
+.title{
+    color: #fff;
+}
+
+.cabecalho {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalhoheader {
+    position: absolute;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: #c6f6de;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.circulo {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #a3c3fe;
+    width: 20%;
+    border-radius: 10px;
+    margin-top: 220px;
+    margin-bottom: 5px;
+}
+
+.circulo img {
+    margin-top: -20px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+input{
+    width: 50%;
+}
+
+.inputField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a3c3fe;
+    width: 1000px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+input {
+    margin-left: 10px;
+    background-color: #c6f6de;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 25px;
+}
+
+.area {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.areaa {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1100px){
+    .circulo {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        background-color: #a3c3fe;
+        width: 50%;
+        border-radius: 10px;
+        margin-top: 150px;
+        margin-bottom: 5px;
+    }
+
+    .container {
+        margin-bottom: 50px;
+    }
+
+    .inputField {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #a3c3fe;
+        width: 100%;
+        margin-left: 0px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    input {
+        background-color: #caf4de;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 0px;
+        width: 90%;
+    }
+
+    h3 {
+        justify-content: center;
+        font-size: 23px;
+        margin-bottom: 3px;
+        margin-top: 0px;
+    }
+
+    #acrescimo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .containerinput {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: 5px;
+      }
+
+    
+    .inputcirculotexto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .inputField h3 {
+        display: block;
+    }
+}

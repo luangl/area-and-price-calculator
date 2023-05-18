@@ -150,50 +150,38 @@ function Home() {
 			</div>
 			<div class="faq__body">
 				<details aria-expanded="true" class="faq__panel" open>
-					<summary class="faq__label">Pergunta</summary>
+					<summary class="faq__label">Como calcular preço?</summary>
 					<div class="faq__panel-body">
 						<p class="faq__panel-answer">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
-							animi dolorum provident id aspernatur, nisi consequuntur iusto!
-							Neque perferendis eaque corrupti alias.
+							Selecione uma das figuras que deseja calcular e coloque as medidas necessárias, a quantidade e assim o valor aparecerá automaticamente!
 						</p>
 					</div>
 				</details>
 				<details aria-expanded="false" class="faq__panel">
 					<summary class="faq__label">
-						Pergunta
+						Como calcular área?
 					</summary>
 					<div class="faq__panel-body">
 						<p class="faq__panel-answer">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
-							animi dolorum provident id aspernatur, nisi consequuntur iusto!
-							Neque perferendis eaque corrupti alias.
+							Para calcular a área, deve ser escolhido uma das figuras e depois colocar todas as medidas necessárias para o calculo da área daquela figura, assim o valor da área aparecerá automaticamente!
 						</p>
 					</div>
 				</details>
 				<details aria-expanded="false" class="faq__panel">
 					<summary class="faq__label">
-						Pergunta
+						Como seleciono a figura?
 					</summary>
 					<div class="faq__panel-body">
 						<p class="faq__panel-answer">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
-							animi dolorum provident id aspernatur, nisi consequuntur iusto!
-							Neque perferendis eaque corrupti alias.
+							Para escolher uma das figuras, basta apenas clicar nela ou para ficar mais fácil, você pode clicar no icone de lupa no começo do site e pesquisar pela figura desejada.
 						</p>
 					</div>
 				</details>
 				<details aria-expanded="false" class="faq__panel">
-					<summary class="faq__label">Pergunta</summary>
+					<summary class="faq__label">Como escolho entre os materiais para fazer o cálculo?</summary>
 					<div class="faq__panel-body">
 						<p class="faq__panel-answer">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-							fuga, aliquid nesciunt perspiciatis est similique? Alias nulla
-							animi dolorum provident id aspernatur, nisi consequuntur iusto!
-							Neque perferendis eaque corrupti alias.
+							Depois de escolhido a figura desejada e ter preenchido corretamente as medidas necessárias para calcular a área, terá um botão com as opções de materiais de construção para você escolher e assim o cálculo do valor para a área necessária do material desejado aparecerá automaticamente!
 						</p>
 					</div>
 				</details>
