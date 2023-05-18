@@ -110,7 +110,7 @@ function Retangulo() {
                     </div>
                     <div className='inputField'>
                         <h3>Quantidade:</h3>
-                        <input type="text" value={valor} onChange={e => setValor(e.target.value)} name="altura" />
+                        <input type="number" value={valor} onChange={e => setValor(e.target.value)} name="altura" />
                     </div>
                     <div className='inputField'>
                         <h3>Valor: R$
