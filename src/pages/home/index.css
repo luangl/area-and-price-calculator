@@ -301,7 +301,7 @@ h2 {
       cursor: pointer;
       font-size: 25px;
       font-weight: bold;
-      width: 400px;
+      width: 100%;
     }
     .faq__label:hover {
       color: #3b71fe;
