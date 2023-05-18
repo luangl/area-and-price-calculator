@@ -178,7 +178,7 @@ function Home() {
 					</div>
 				</details>
 				<details aria-expanded="false" class="faq__panel">
-					<summary class="faq__label">Como escolho entre os materiais para fazer o cálculo?</summary>
+					<summary class="faq__label">Como mudo o material?</summary>
 					<div class="faq__panel-body">
 						<p class="faq__panel-answer">
 							Depois de escolhido a figura desejada e ter preenchido corretamente as medidas necessárias para calcular a área, terá um botão com as opções de materiais de construção para você escolher e assim o cálculo do valor para a área necessária do material desejado aparecerá automaticamente!
