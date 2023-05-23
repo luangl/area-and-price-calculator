@@ -134,7 +134,7 @@ function Circulo() {
         </h3>
         <h3>
           {tipoCalculo === 'latas' ?
-            `${calcLatas} Latas de tinta de 1L` :
+            `${calcLatas} Latas de tinta de 20L` :
             `${calcTijolos} unidades`
           }
         </h3>
