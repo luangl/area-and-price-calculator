@@ -8,6 +8,7 @@ function Retangulo() {
     const [altura, setAltura] = useState('');
     const [largura, setLargura] = useState('');
     const [valor, setValor] = useState('');
+      const [valoor, setValoor] = useState('');
     const [addOnArea, setAddOnArea] = useState('');
     const [resultado, setResultado] = useState('');
     const [tipoCalculo, setTipoCalculo] = useState('latas');
@@ -24,9 +25,9 @@ function Retangulo() {
         return addOnArea ? resTotal : resTemp;
     }, [altura, largura, addOnArea]);
     
-    const calcPreco = useMemo(() => {
-        return resultado * valor;
-    }, [valor, resultado]);
+     const calcPreco = useMemo(() => {
+        return (resultado * valor  * valoor).toFixed(2);
+    }, [valor, valoor, resultado]);
 
     const calcLatas = useMemo(() => {
         const COBERTURA_POR_LATA = 10; // Área em m² coberta por uma lata de tinta
@@ -102,18 +103,22 @@ function Retangulo() {
                 
             </div>
 
+            
+            <div className='inputField'>
+              <h3>Área: {calcArea}m²</h3>
+            </div>
             <div className='inputField'>
               <h3>Acréscimo de percentual de Área</h3>
               <input type="number" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
-              {addOnArea}
-            </div>
-            <div className='inputField'>
-              <h3>Área: {calcArea}m²</h3>
             </div>
             <div className='inputField'>
               <h3>Quantidade:</h3>
               <input type="number" value={valor} onChange={e => setValor(e.target.value)} name="altura" />
             </div>
+            <div className='inputField'>
+                    <h3>Valor Pelo Serviço (por m²): R$</h3>
+                    <input className='input' type="number" value={valoor} onChange={e => setValoor(e.target.value)} name="valor" />
+                    </div>
             <div className='inputField'>
               <h3>Valor: R$
                 {calcPreco}</h3>
