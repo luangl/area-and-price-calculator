@@ -17,6 +17,17 @@ function Quadrado() {
 
     const handleOnClickVolta = () => navigate('/');
 
+  const [isInputVisible, setIsInputVisible] = useState(true);
+
+  const handleCheckboxChange = (e) => {
+    if (e.target.value === 'nao') {
+      setIsInputVisible(false);
+      setAddOnArea('');
+    } else {
+      setIsInputVisible(true);
+    }
+  };
+
     const calcArea = useMemo(() => {
         const resTemp = lado * lado;
         const valorPercentual = addOnArea ? (resTemp * addOnArea) / 100 : 0;
@@ -100,10 +111,47 @@ function Quadrado() {
                     <div className='inputField'>
                     <h3>Área: {calcArea}m²</h3>
                     </div>
-                    <div className='inputField'>
-                    <h3>Acréscimo de percentual de Área</h3>
-                        <input className='input' type="number" value={addOnArea} onChange={e => setAddOnArea(e.target.value)} name="addOnArea" />
-                    </div>
+                    <div id="acrescimo">
+                      <div className='inputField'>
+      <h3 id='utilizar'>Utilizar Acréscimo de percentual de Área</h3>
+      <div id="check">
+      <label>
+        <input
+        id='inputs'
+          type="checkbox"
+          value="sim"
+          checked={isInputVisible}
+          onChange={handleCheckboxChange}
+        />
+      <h3 id='textocheck'>Sim</h3>
+      </label>
+
+      <label>
+        <input
+        id='inputs'
+          type="checkbox"
+          value="nao"
+          checked={!isInputVisible}
+          onChange={handleCheckboxChange}
+        />
+        <h3 id='textocheck'>Não</h3>
+      </label>
+      </div>
+      </div>
+
+      {isInputVisible && (
+        <div  className='inputField'>
+          <h3>Acréscimo em %:</h3>
+          <input
+            className='input'
+            type="number"
+            value={addOnArea}
+            onChange={(e) => setAddOnArea(e.target.value)}
+            name="addOnArea"
+          />
+        </div>
+      )}
+    </div>
                     <div className='inputField'>
                     <h3>Quantidade:</h3>
                         <input className='input' type="number" value={valor} onChange={e => setValor(e.target.value)} name="altura" />

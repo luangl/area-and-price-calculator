@@ -19,6 +19,30 @@ body {
     display: flex;
 }
 
+#acrescimo {
+    display: inline
+}
+
+#check {
+    display: flex;
+}
+
+#textocheck {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+label {
+    display: flex;
+}
+
+#inputs {
+    align-self: center;
+    width: 30px;
+    justify-content: center;
+    display: flex;
+} 
+
 
 .title{
     color: #fff;
@@ -187,5 +211,21 @@ input {
     
     .inputField h3 {
         display: block;
+    }
+
+    
+    #utilizar {
+        font-size: 20px;
+    }
+
+    #inputs {
+        align-self: center;
+        width: 20px;
+        justify-content: center;
+        display: flex;
+    } 
+
+    #textocheck {
+        font-size: 20px;
     }
 }
