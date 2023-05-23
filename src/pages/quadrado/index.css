@@ -230,4 +230,8 @@ input {
     #textocheck {
         font-size: 20px;
     }
+
+    label {
+        align-items: center;
+    }
 }
