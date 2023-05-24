@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {useNavigate} from 'react-router-dom';
-import retangulo from '../../assets/imagens/retangulo.png'
+import retangulo from '../../assets/imagens/retanguloo.png'
 import styles from '../retangulo/index.css';
 
 function Retangulo() {
@@ -104,12 +104,12 @@ function Retangulo() {
           </div>
           <div>
             <div className='inputField'>
-              <h3>Altura</h3>
+              <h3>Altura (h)</h3>
                 <input type="number" value={altura} onChange={e => setAltura(e.target.value)} name="altura" />
                 
             </div>
             <div className='inputField'>
-              <h3>Largura</h3>
+              <h3>Largura (L)</h3>
                 <input type="number" value={largura} onChange={e => setLargura(e.target.value)} name="largura" />
                 
             </div>

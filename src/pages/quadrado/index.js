@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {useNavigate} from 'react-router-dom';
-import quadrado from '../../assets/imagens/Quadrado-Formas-PNG.png';
+import quadrado from '../../assets/imagens/quadrado.png';
 import styles from '../quadrado/index.css';
 
 
@@ -104,7 +104,7 @@ function Quadrado() {
                 </div>
                 <div>
                     <div className='inputField'>
-                        <h3>Lado em metros</h3>
+                        <h3>Lado (L) em metros</h3>
                         <input className='input' type="number" value={lado} onChange={e => setLado(e.target.value)} name="altura" />
                         
                     </div>

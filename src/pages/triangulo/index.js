@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {useNavigate} from 'react-router-dom';
-import triangulo from '../../assets/imagens/triangulo-equilatero-8.png'
+import triangulo from '../../assets/imagens/triangulo.png'
 import styles from '../triangulo/index.css';
 
 function Triangulo() {
@@ -106,12 +106,12 @@ function Triangulo() {
           <div>
             <div className='inputField'>
               <h3>
-                Base</h3>
+                Base (b)</h3>
               <input className='input' type="number" value={base} onChange={e => setBase(e.target.value)} name="altura" />
 
             </div>
             <div className='inputField'>
-              <h3>Altura</h3>
+              <h3>Altura (h)</h3>
               <input className='input' type="number" value={altura} onChange={e => setAltura(e.target.value)} name="largura" />
 
             </div>

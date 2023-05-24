@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {useNavigate} from 'react-router-dom';
-import trapesio from '../../assets/imagens/trapesio.png'
+import trapesio from '../../assets/imagens/trapezio.png'
 import styles from '../trapesio/index.css';
 
 function Trapesio() {
@@ -107,17 +107,17 @@ function Trapesio() {
           </div>
           <div>
             <div className='inputField'>
-              <h3>Base menor</h3>
+              <h3>Base menor (b)</h3>
                 <input type="number" value={bmenor} onChange={e => setBMenor(e.target.value)} name="altura" />
                 
                 </div>
                 <div className='inputField'>
-                <h3>Base maior</h3>
+                <h3>Base maior (B)</h3>
                 <input type="number" value={bmaior} onChange={e => setBMaior(e.target.value)} name="largura" />
                 
                 </div>
                 <div className='inputField'>
-                <h3>Altura</h3>
+                <h3>Altura (h)</h3>
                 <input type="number" value={altura} onChange={e => setAltura(e.target.value)} name="largura" />
                 
                 </div>

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from '../circulo/index.css';
-import circulo from '../../assets/imagens/icone-cercle-noir.png';
+import circulo from '../../assets/imagens/circulo.png';
 
 
 function Circulo() {
@@ -106,7 +106,7 @@ function Circulo() {
           </div>
           <div>
             <div className='inputField'>
-              <h3>Raio em metros:</h3>
+              <h3>Raio (r) em metros:</h3>
               <input type="number" value={raio} onChange={e => setRaio(e.target.value)} name="altura" />
             </div>
             <div className='inputField'>
