@@ -15,6 +15,9 @@ function Trapesio() {
     const [tipoCalculo, setTipoCalculo] = useState('latas');
     const [calcTotalTijolos, setCalcTotalTijolos] = useState('0');
     const [calcTotalLatas, setCalcTotalLatas] = useState('0');
+    const [precoLataTinta, setPrecoLataTinta] = useState('');
+  const [precoTijolo, setPrecoTijolo] = useState('');
+  const [coberturaPorLata, setCoberturaPorLata] = useState(10);
 
 
     const handleOnClickVolta = () => navigate('/');
@@ -43,48 +46,30 @@ function Trapesio() {
   }, [valor, valoor, resultado]);
 
     const calcLatas = useMemo(() => {
-      const COBERTURA_POR_LATA = 10; // Área em m² coberta por uma lata de tinta
-      const qtdLatas = Math.ceil(calcArea / COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
-      return qtdLatas;
-    }, [calcArea, valor]);
-  
-    const calcTijolos = useMemo(() => {
-      const COBERTURA_POR_LATA = 23; // Área em m² coberta por uma lata de tinta
-      const qtdLatas = Math.ceil(calcArea * COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
-      return qtdLatas;
-    }, [calcArea, valor]);
-    
-  
-      const PRECO_LATA_TINTA = 100; // Preço unitário de uma lata de tinta de 20L
-  
-      const PRECO_TIJOLO = 5; // Preço unitário de um tijolo
-  
-      function handleSelectChange(event) {
-        setTipoCalculo(event.target.value);
-        if (event.target.value === 'latas') {
-          const qtdLatas = calcLatas / 10; // Cada lata tem 10L
-          const total = (qtdLatas * PRECO_LATA_TINTA) + parseFloat(calcPreco);
-          setCalcTotalLatas(total.toFixed(2));
-        } else if (event.target.value === 'tijolos') {
-          const total = (calcTijolos * PRECO_TIJOLO) + parseFloat(calcPreco);
-          setCalcTotalTijolos(total.toFixed(2));
-        }
-      }
-      const totalValue = useMemo(() => {
-        if (tipoCalculo === 'latas') {
-          const qtdLatas = calcLatas / 10; // Cada lata tem 10L
-          const total = (qtdLatas * PRECO_LATA_TINTA) + parseFloat(calcPreco);
-          return total.toFixed(2);
-        } else if (tipoCalculo === 'tijolos') {
-          const total = (calcTijolos * PRECO_TIJOLO) + parseFloat(calcPreco);
-          return total.toFixed(2);
-        }
-      }, [tipoCalculo, calcLatas, calcTijolos, calcPreco]);
-  
-      const options = [
-        { value: 'latas', label: 'Latas de Tinta' },
-        { value: 'tijolos', label: 'Tijolos' }
-      ];
+    const qtdLatas = Math.ceil(calcArea / coberturaPorLata * valor).toFixed(0);
+    return qtdLatas;
+  }, [calcArea, valor, coberturaPorLata]);
+
+  const calcTijolos = useMemo(() => {
+    const COBERTURA_POR_LATA = 23; // Área em m² coberta por uma lata de tinta
+    const qtdLatas = Math.ceil(calcArea * COBERTURA_POR_LATA * valor).toFixed(0); // Arredonda para cima a quantidade de latas necessárias
+    return qtdLatas;
+  }, [calcArea, valor]);
+
+  const totalValue = useMemo(() => {
+    if (tipoCalculo === 'latas') {
+      const totalLatas = calcLatas * precoLataTinta;
+      return (totalLatas + parseFloat(calcPreco)).toFixed(2);
+    } else if (tipoCalculo === 'tijolos') {
+      const totalTijolos = calcTijolos * precoTijolo;
+      return (totalTijolos + parseFloat(calcPreco)).toFixed(2);
+    }
+  }, [tipoCalculo, calcLatas, calcTijolos, calcPreco, precoLataTinta, precoTijolo]);
+
+  const options = [
+    { value: 'latas', label: 'Latas de Tinta' },
+    { value: 'tijolos', label: 'Tijolos' }
+  ];
 
 
     return (
@@ -178,29 +163,57 @@ function Trapesio() {
               <h3>Valor: R$
                 {calcPreco}</h3>
             </div>
-            <div>
-              <div className='containerinput'>
-                <div className='inputField'>
-                  <h3 className='inputcirculo'>
-                    <label className='inputcirculotexto' htmlFor="select-calculo">Calcular em:</label>
-                    <select id="select-calculo" onChange={handleSelectChange}>
-                      <option value="latas">Latas de tinta de 20Litros</option>
-                      <option value="tijolos">Tijolos</option>
-                    </select>
-                  </h3>
-                  <h3>
-                    {tipoCalculo === 'latas' ?
-                      `${calcLatas} Latas de tinta de 20L` :
-                      `${calcTijolos} unidades`}
-                  </h3>
-                </div>
+            <div className='inputField'>
+              <div className='selecionar' >
+              <h3 id='lata2l'>Escolha o material para orçamento:</h3>
+              <select
+                className='select'
+                value={tipoCalculo}
+                onChange={(e) => setTipoCalculo(e.target.value)}
+              >
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
               </div>
+            </div>
+            {tipoCalculo === 'latas' ? (
+              <><div className='inputField'>
+                <h3 id='lata3l'>Valor Unitário da Lata de Tinta de 5L: R$</h3>
+                <input className='input' type="number" value={precoLataTinta} onChange={e => setPrecoLataTinta(e.target.value)} name="precoLataTinta" />
+              </div><div className='inputField'>
+                  <h3 id='lata3l'>Área coberta por uma lata de tinta (m²):</h3>
+                  <input
+                    className='input'
+                    type="number"
+                    value={coberturaPorLata}
+                    onChange={e => setCoberturaPorLata(e.target.value)}
+                    name="coberturaPorLata" />
+                </div></>
+            ) : (
               <div className='inputField'>
-                <h3>
-                  Valor Total: R$ {totalValue}
-                </h3>
+                <h3>Valor Unitário do Tijolo: R$</h3>
+                <input className='input' type="number" value={precoTijolo} onChange={e => setPrecoTijolo(e.target.value)} name="precoTijolo" />
               </div>
-
+            )}
+            <div className='inputField'>
+              <h3>Resultado:</h3>
+              <div>
+                {tipoCalculo === 'latas' && (
+                  <>
+                    <h3 id='lata5l'>{`Quantidade de Latas de Tinta de 5L: ${calcLatas}`}</h3>
+                    <h3>{`Total: R$${totalValue}`}</h3>
+                  </>
+                )}
+                {tipoCalculo === 'tijolos' && (
+                  <>
+                    <h3>{`Quantidade de Tijolos: ${calcTijolos}`}</h3>
+                    <h3>{`Total: R$${totalValue}`}</h3>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>

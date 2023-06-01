@@ -145,6 +145,17 @@ input {
     justify-content: center;
 }
 
+select{
+    font-size: 20px;
+    background-color: #c6f6de;
+}
+
+div.selecionar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 1100px){
 
     div#acrescimo {
@@ -234,5 +245,21 @@ input {
 
     label {
         align-items: center;
+    }
+
+    #lata5l{
+        font-size: 18px;
+    }
+
+    #lata3l{
+        font-size: 18px;
+    }
+
+    #lata2l{
+        font-size: 15px;
+    }
+
+    select{
+        font-size: 15px;
     }
 }
