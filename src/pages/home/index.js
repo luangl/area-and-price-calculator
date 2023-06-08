@@ -114,6 +114,9 @@ function Home() {
           <a className="refscolor scroll-link" href="#avalie">
             <h1 className="refstext">AVALIE NOSSO SERVIÇO</h1>
           </a>
+          <a className="refscolor scroll-link" href=".final">
+            <h1 className="refstext">SIGA NOSSO INSTAGRAM</h1>
+          </a>
         </div>
       </header>
       <div class="faq__header_se">
@@ -187,16 +190,23 @@ function Home() {
 				</details>
 			</div>
 		</section>
-    <footer id='avalie'>
+    <div class="arru" id='avalie'></div>
+    <footer>
         <div>
-          <a href='https://forms.gle/CJqewkoxvPUsE96h7'> 
+          <div class="oii">
+          <a> 
           <h3>AVALIE NOSSO SERVIÇO!</h3>
           </a>
+          </div>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSep-7W8Q4-TSLiTl7drVkHX3Mo_YedGxAGXSTyVjqdl9xVRLQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+          <a class="instaa" href='https://www.instagram.com/capf.2023/' target="_blank"><h1 class="insta">Siga a gente no Instagram!</h1><i class="fab fa-instagram"></i></a>
           <div className='rodape'>
             
             </div>
         </div>
-      </footer></>
+      </footer>
+      <div className='final'></div>
+      </>
   );
 }
 
