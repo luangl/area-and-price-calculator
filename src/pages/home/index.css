@@ -59,6 +59,29 @@ h2 {
     margin-top: 220px;
 }
 
+.doacao {
+  color: #eee;
+  font-size: 30px;
+  align-items: center;
+  margin-bottom: 2px;
+  margin-top: -10px;
+}
+
+.fa-pix {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  color: #00bdae;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.fa-pix::before {
+  margin-right: 10px;
+  font-size: 60px;
+}
+
 .texto{
     margin-top: 50px;
     margin-bottom: 30px;
@@ -216,7 +239,11 @@ h2 {
 
   .insta {
     color: #eee;
-  }
+    }
+
+    .instaa {
+      margin-bottom: 30px;
+      }
 
   .oii{
     display: flex;
@@ -394,7 +421,7 @@ width: 20%;
     }
     
     .refstext {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .title {
@@ -419,6 +446,12 @@ width: 20%;
     .instaa {
       font-size: 25px;
       margin-top: 30px;
+    }
+
+    .doacao {
+      font-size: 17px;
+      margin-top: 30px;
+      color: #eee;
     }
 
     .fa-instagram {

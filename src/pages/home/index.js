@@ -117,6 +117,9 @@ function Home() {
           <a className="refscolor scroll-link" href="#paginsta">
             <h1 className="refstext">SIGA NOSSO INSTAGRAM</h1>
           </a>
+          <a className="refscolor scroll-link" href="#paginsta">
+            <h1 className="refstext">CONTRIBUIR COM O CAPF</h1>
+          </a>
         </div>
       </header>
       <div class="faq__header_se">
@@ -200,6 +203,12 @@ function Home() {
           </div>
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSep-7W8Q4-TSLiTl7drVkHX3Mo_YedGxAGXSTyVjqdl9xVRLQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
           <a class="instaa" href='https://www.instagram.com/capf.2023/' target="_blank"><h1 class="insta">Siga a gente no Instagram!</h1><i class="fab fa-instagram"></i></a>
+          <h1 class="doacao">Deseja contribuir com uma doação para o CAPF?
+          </h1>
+          <h1 class="doacao">
+          Faça uma doação para o PIX:
+          </h1>
+          <i class="fa-brands fa-pix" color="#ffffff" id="pix">+55 (81)99844-6748</i>
           <div className='rodape'>
             
             </div>
