@@ -448,11 +448,6 @@ width: 20%;
       margin-top: 30px;
     }
 
-    .doacao {
-      font-size: 17px;
-      margin-top: 30px;
-      color: #eee;
-    }
 
     .fa-instagram {
       margin-left: 10px;
@@ -461,6 +456,33 @@ width: 20%;
 
     .insta {
       font-size: 25px;
+    }
+
+    .doacao {
+      color: #eee;
+      font-size: 22px;
+      align-items: center;
+      margin-bottom: 2px;
+      margin-top: -10px;
+    }
+
+    #textmaior {
+      font-size: 17px;
+    }
+    
+    .fa-pix {
+      font-size: 29px;
+      display: flex;
+      justify-content: center;
+      margin-right: 10px;
+      color: #00bdae;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .fa-pix::before {
+      margin-right: 10px;
+      font-size: 42px;
     }
 
     }
