@@ -114,7 +114,7 @@ function Home() {
           <a className="refscolor scroll-link" href="#avalie">
             <h1 className="refstext">AVALIE NOSSO SERVIÇO</h1>
           </a>
-          <a className="refscolor scroll-link" href=".final">
+          <a className="refscolor scroll-link" href="#paginsta">
             <h1 className="refstext">SIGA NOSSO INSTAGRAM</h1>
           </a>
         </div>
@@ -205,7 +205,7 @@ function Home() {
             </div>
         </div>
       </footer>
-      <div className='final'></div>
+      <div id='paginsta'></div>
       </>
   );
 }

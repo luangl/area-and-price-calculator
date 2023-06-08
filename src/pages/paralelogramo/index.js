@@ -209,7 +209,7 @@ function Retangulo() {
         </div>
       </div><footer id='avalie'>
           <div>
-            <a href='https://forms.gle/CJqewkoxvPUsE96h7'>
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLSep-7W8Q4-TSLiTl7drVkHX3Mo_YedGxAGXSTyVjqdl9xVRLQ/viewform'>
               <h3>AVALIE NOSSO SERVIÇO!</h3>
             </a>
             <div className='rodape'>
