@@ -9,10 +9,11 @@ import Retangulo from './pages/retangulo';
 import Trapesio from './pages/trapesio';
 import Circulo from './pages/circulo';
 import Paralelogramo from './pages/paralelogramo';
+import { Analytics } from '@vercel/analytics/react';
 
-function App() {
+function App({Component, pageProps}) {
   return (
-    <BrowserRouter>
+    <><BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/quadrado" element={<QuadradoCard />} />
@@ -22,7 +23,7 @@ function App() {
         <Route path="/circulo" element={<CirculoCard />} />
         <Route path="/paralelogramo" element={<ParalelogramoCard />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter><Analytics /></>
   );
 }
 
